@@ -1,36 +1,36 @@
-let valor, lado, result, base, altura, radio;
+let lado, result, base, altura, radio;
 
-console.log("1.- Cuadrado \n 2.- Triangulo \n 3.- Rectangulo \n 4.- Circulo");
-valor=int(input("Ingrese el número"))
+function calcularAreas() {
+    console.log("1.- Cuadrado \n2.- Triángulo \n3.- Rectángulo \n4.- Círculo");
+    
+    let valor = parseInt(prompt("Ingrese el número de la figura a calcular"));
 
-switch (valor) {
-    case 1:
-        console.log("Digame el valor de los lados del cuadrado:");
-        lado = int(input("Valor de lados"));
-        result = lado * lado * lado * lado; 
-        print("El area del cuadrado es: " + result)
-        break;
-    case 2:
-        console.log("Digame la base del traingulo");
-        base = int(input("Valor de base"));
-        console.log("Dime la altura del traingulo:");
-        altura = int(input("Valor de altura"));
-        result = (base *altura) / 2;
-        console.log("El área es: " + result)
-        break;
-    case 3:
-        console.log("Digame la base del rectangulo");
-        base = int(input("Valor de base"));
-        console.log("Dime la altura del rectangulo:");
-        altura = int(input("Valor de altura"));
-        result = base * altura;
-        console.log("El área es: " + result)
-        break;
-
-    case 4:
-        console.log("Digame el radio del circulo:")
-        radio = int(input("Dime el radio del circulo"))
-        result = (3.14 * radio) ^2
-        console.log("El área del circulo es: " + result)
-        break;
+    switch (valor) {
+        case 1:
+            lado = parseFloat(prompt("Ingrese el valor del lado del cuadrado"));
+            result = lado * lado;
+            console.log("El área del cuadrado es: " + result);
+            break;
+        case 2:
+            base = parseFloat(prompt("Ingrese la base del triángulo"));
+            altura = parseFloat(prompt("Ingrese la altura del triángulo"));
+            result = (base * altura) / 2;
+            console.log("El área del triángulo es: " + result);
+            break;
+        case 3:
+            base = parseFloat(prompt("Ingrese la base del rectángulo"));
+            altura = parseFloat(prompt("Ingrese la altura del rectángulo"));
+            result = base * altura;
+            console.log("El área del rectángulo es: " + result);
+            break;
+        case 4:
+            radio = parseFloat(prompt("Ingrese el radio del círculo"));
+            result = Math.PI * Math.pow(radio, 2);
+            console.log("El área del círculo es: " + result);
+            break;
+        default:
+            console.log("Opción no válida.");
+    }
 }
+
+calcularAreas();
